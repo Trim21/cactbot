@@ -53,14 +53,13 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint-staged"
+      "pre-commit": "tsc --noEmit && npm run lint-staged"
     }
   },
   "lint-staged": {
     "*.css": "stylelint",
     "*.{js,cjs,mjs,ts}": "eslint",
     "*.md": "markdownlint",
-    "*.ts": "tsc --noEmit",
     "*.py": "python -m pylint --errors-only",
     "ui/(raidboss|oopsyraidsy)/data/**": "node --loader ts-node/esm test/test_raidboss_data.js"
   },
